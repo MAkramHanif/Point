@@ -11,11 +11,9 @@ class CustomHeader extends Component {
     render() {
         return (
             <Header
-  leftComponent={{ icon: 'menu', color: '#fff', onPress :() => this.props.drawerOpen()}}
-  centerComponent={{ text: this.props.title , style: { color: '#fff' } }}
- 
-/>
-            
+                leftComponent={{ icon: 'menu', color: '#fff', onPress :() => this.props.drawerOpen()}}
+                centerComponent={{ text: this.props.title , style: { color: '#fff' } }}
+            />
         );
     }
 }

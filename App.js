@@ -18,6 +18,7 @@ import ViewFees from './Screen/View Fee';
 import RegisterPoint from './Screen/RegisterPoint';
 import ViewNotification from './Screen/ViewNotification';
 import Complain from './Screen/Complain';
+
 export default class App extends Component{
   render(){
     return(
@@ -104,4 +105,4 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: 'white'
   }
-})
+});

@@ -9,7 +9,6 @@ import {
 
 //library imports
 import { Icon, Button, Container, Header, Content, Left } from 'native-base';
-//import { Header } from 'react-native-elements';
 import CustomHeader from '../Components/CustomHeader';
 import MapView from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';

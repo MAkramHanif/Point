@@ -1,5 +1,5 @@
-import React,{Component} from 'react';
-import{
+import React, { Component } from 'react';
+import {
   View,
   StyleSheet,
   Image,
@@ -7,7 +7,7 @@ import{
 } from 'react-native';
 
 import firebase from 'firebase';
-import { Container, Content, Icon, Header, Body,Spinner,Button,Text,Root } from 'native-base';
+import { Container, Content, Icon, Header, Body, Spinner, Button, Text, Root } from 'native-base';
 import { DrawerNavigator, StackNavigator, DrawerItems, SafeAreaView } from 'react-navigation';
 
 import SettingsScreen from './SettingScreen';
@@ -20,12 +20,9 @@ import ViewNotification from './ViewNotification';
 import Complain from './Complain';
 
 
-export default class Home extends Component{
-  static navigationOptions = ({ navigation }) => ({
-    header: null
-  })
-  render(){
-    return(
+export default class Home extends Component {
+  render() {
+    return (
       <MyApp />
     );
   }
@@ -37,7 +34,8 @@ const CustomDrawerContentComponent = (props) => (
       <Body>
         <Image
           style={styles.drawerImage}
-          source={require('../image/Man.png')} />
+          source={require('../image/Man.png')}
+        />
       </Body>
     </Header>
     <Header style={styles.drawerText}>
@@ -59,23 +57,23 @@ const MyApp = DrawerNavigator({
   Home: {
     screen: HomeScreen,
   },
-  ChangeLocation :{
-    screen : ChangeLocation
+  ChangeLocation: {
+    screen: ChangeLocation
   },
-  ViewInfo:{
-    screen : ViewInfo
+  ViewInfo: {
+    screen: ViewInfo
   },
-  ViewFees:{
-    screen : ViewFees
+  ViewFees: {
+    screen: ViewFees
   },
-  RegisterPoint:{
-    screen : RegisterPoint
+  RegisterPoint: {
+    screen: RegisterPoint
   },
-  ViewNotification:{
-    screen : ViewNotification
+  ViewNotification: {
+    screen: ViewNotification
   },
-  Complain:{
-    screen : Complain
+  Complain: {
+    screen: Complain
   },
   Settings: {
     screen: SettingsScreen

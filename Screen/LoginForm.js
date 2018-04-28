@@ -3,7 +3,6 @@ import firebase from 'firebase';
 import { StyleSheet, StatusBar, Image, Dimensions,Text } from 'react-native';
 import { Spinner, Container, Toast, Button, Content, Item, Input, Label } from 'native-base';
 import { Row, Grid } from 'react-native-easy-grid';
-import { StackNavigator } from 'react-navigation';
 
 const { width, height } = Dimensions.get('window');
 
@@ -43,7 +42,6 @@ export default class Login extends Component {
             showToast: false,
             loading: false
         });
-        this.props.navigation.navigate('Home');
     }
 
     renderButton() {
@@ -51,7 +49,7 @@ export default class Login extends Component {
             return <Spinner size='large' color='orange' />;   
         }
         return (
-            <Button block  warning style={{ margin: 20 }} onPress={this.onButtonPress.bind(this)} >
+            <Button block warning style={{ margin: 20 }} onPress={this.onButtonPress.bind(this)} >
                 <Text style={{ fontSize: 18 }}>Login</Text>
             </Button>
 
@@ -103,7 +101,7 @@ export default class Login extends Component {
                         />
                         </Item>
                     {this.renderButton()}
-                    <Text style={styles.signup} onPress={()=>this.props.navigation.navigate('SignUpForm')}>
+                    <Text style={styles.signup} onPress={() => this.props.navigation.navigate('SignUpForm')}>
                     Don't have an account ? SignUp Now 
                     </Text>
                 </Row>

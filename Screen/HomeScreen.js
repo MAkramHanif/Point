@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import {
   View,
   Text,
@@ -10,27 +9,21 @@ import {
 
 //library imports
 import { Icon, Button, Container, Header, Content, Left } from 'native-base';
-//import { Header } from 'react-native-elements'
-
-//custom components imports 
 import CustomHeader from '../Components/CustomHeader';
 import MapView from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
-import BottomSheet from 'react-native-bottomsheet';
-import SimpleView from '../Components/bottomsheet'
 const { width, height } = Dimensions.get('window');
 const ASPECT_RATIO = width / height;
 const LATITUDE = 25.0700;
 const LONGITUDE =  67.2848;
 const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
-
 const GOOGLE_MAPS_APIKEY = 'AIzaSyDKcVLOnoPqdMp5nu7gcK6HQ4TTgZqsVRM';
 
-class HomeScreen extends Component {
+export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       coordinates: [{
           latitude:  24.875596,
@@ -50,14 +43,6 @@ class HomeScreen extends Component {
     this.mapView = null;
   }
 
-/*  onMapPress = (e) => {
-    this.setState({
-      coordinates: [
-        ...this.state.coordinates,
-        e.nativeEvent.coordinate,
-      ],
-    });
-  }*/
   static navigationOptions = ({ navigation }) => ({
     title: "Home",
     headerLeft: <Icon name="ios-menu" style={{ paddingLeft: 10 }} onPress={() => this.props.navigation.navigate('DrawerOpen')} />,
@@ -70,11 +55,9 @@ class HomeScreen extends Component {
     ),
   })
 
-
   render() {
     return (
       <Container>
-
         <CustomHeader title="Home" drawerOpen={() => this.props.navigation.navigate('DrawerOpen')} />
           <MapView
             provider="google"
@@ -97,31 +80,24 @@ class HomeScreen extends Component {
             onPress={this.onMapPress}
           >
             <MapView.Marker
-            coordinate={this.state.coordinates[0]}
+              coordinate={this.state.coordinates[0]}
             />
             <MapView.Marker
-            coordinate={this.state.coordinates[this.state.coordinates.length-1]}
+              coordinate={this.state.coordinates[this.state.coordinates.length-1]}
             />
             <MapViewDirections
-                origin={this.state.coordinates[0]}
-                waypoints={ (this.state.coordinates.length > 2) ? this.state.coordinates.slice(1, -1): null}
-                destination={this.state.coordinates[this.state.coordinates.length-1]}
-                apikey={GOOGLE_MAPS_APIKEY}
-                strokeWidth={4}
-                strokeColor="hotpink"
+              origin={this.state.coordinates[0]}
+              waypoints={ (this.state.coordinates.length > 2) ? this.state.coordinates.slice(1, -1): null}
+              destination={this.state.coordinates[this.state.coordinates.length-1]}
+              apikey={GOOGLE_MAPS_APIKEY}
+              strokeWidth={4}
+              strokeColor="hotpink"
             />
-
-          </MapView>
-          
-          <SimpleView />
-  
-                </Container>
+          </MapView>            
+      </Container>
     )
   }
 }
-
-export default HomeScreen;
-
 
 const styles = StyleSheet.create({
   icon: {

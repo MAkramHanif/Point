@@ -44,7 +44,7 @@ export default class SignUpForm extends Component {
       duration: 3000
     });
     this.setState({ loading: false });
-    this.props.navigation.navigate('Login');
+    this.props.navigation.navigate('Initial');
   }
 
   renderButton() {
@@ -68,7 +68,7 @@ export default class SignUpForm extends Component {
         <Header style={{ backgroundColor: '#2d3436' }}>
           <Left>
             <Button transparent>
-              <Icon onPress={()=>this.props.navigation.navigate('Login')} name='arrow-back' />
+              <Icon onPress={()=> this.props.navigation.navigate('Initial')} name='arrow-back' />
             </Button>
           </Left>
             <Body>
@@ -76,7 +76,7 @@ export default class SignUpForm extends Component {
           </Body>
           <Right>
             <Button transparent>
-              <Icon onPress={()=>this.props.navigation.navigate('Login')} name='close' />
+              <Icon onPress={()=>this.props.navigation.navigate('Initial')} name='close' />
             </Button>
           </Right>       
         </Header>

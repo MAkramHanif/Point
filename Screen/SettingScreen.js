@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import {
-    View,
     Text,
     StyleSheet,
     Image
-} from "react-native";
+} from 'react-native';
+import firebase from 'firebase';
 
 import { Container, Content, Icon, Button } from 'native-base';
 import CustomHeader from '../Components/CustomHeader';
@@ -33,7 +33,7 @@ class SettingsScreen extends Component {
                 <Content contentContainerStyle={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 10 }}>
                     <Button
                         full
-                        onPress={() => this.props.navigation.navigate('Home')}>
+                        onPress={() => firebase.auth().signOut()} >
                         <Text style={{ color: 'white' }}>Go to Home screen</Text>
                     </Button>
                 </Content>
